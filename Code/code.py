@@ -1,8 +1,9 @@
 import pandas as pd
+import os
 
 
 # Function to check if any words in the user's comment exist in the CSV data
-def validate_comment(csv_file, user_comment):
+def validate_comment(csv_file, user_comment, output_file):
     try:
         # Read the CSV file into a DataFrame
         data = pd.read_csv(csv_file)
@@ -24,6 +25,9 @@ def validate_comment(csv_file, user_comment):
         # Provide feedback based on the results
         if found_words:
             print(f"Your comment contains the following flagged word(s): {', '.join(found_words)}")
+
+            # Save the flagged comment to the output CSV file
+            save_flagged_comment(output_file, user_comment)
         else:
             print("Your comment is clean and contains no flagged words.")
 
@@ -33,10 +37,29 @@ def validate_comment(csv_file, user_comment):
         print(f"An error occurred: {e}")
 
 
+# Function to save the flagged comment in the output CSV file
+def save_flagged_comment(output_file, user_comment):
+    # Create a DataFrame to store the flagged comment
+    df = pd.DataFrame({'statement': [user_comment]})
+
+    # Check if the output CSV file exists
+    if os.path.isfile(output_file):
+        # Append to the existing file
+        df.to_csv(output_file, mode='a', header=False, index=False)
+    else:
+        # Create a new file with the header
+        df.to_csv(output_file, mode='w', header=True, index=False)
+
+    print(f"Flagged comment saved to {output_file}")
+
+
 # Main logic
 if __name__ == "__main__":
-    # Example CSV file path
+    # Example CSV file path containing hate words
     csv_file = "testD1.csv"
+
+    # Output CSV file to store flagged comments
+    output_file = "hateout.csv"
 
     while True:
         # Get user comment
@@ -48,4 +71,4 @@ if __name__ == "__main__":
             break
 
         # Validate the comment against CSV data
-        validate_comment(csv_file, user_comment)
+        validate_comment(csv_file, user_comment, output_file)
