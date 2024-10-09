@@ -25,12 +25,12 @@ def validate_comment(csv_file, user_comment, output_file):
 
         # Provide feedback based on the results
         if found_words:
-            print(f"Your comment contains the following flagged word(s): {', '.join(found_words)}")
+            print(f"Found: Hateful or Offensive content: {', '.join(found_words)}")
 
             # Save the flagged comment to the output CSV file
             save_flagged_comment(output_file, user_comment)
         else:
-            print("Your comment is clean and contains no flagged words.")
+            print("Success: No Hateful or Offensive content.")
 
     except FileNotFoundError:
         print("Error: CSV file not found. Please check the file path.")
@@ -115,13 +115,13 @@ def validate_comment(csv_file, user_comment, output_file):
 
         # Categorize the statement
         if found_hate_words:
-            print(f"Your comment contains the following hate speech word(s): {', '.join(found_hate_words)}")
+            print(f"Found: Hateful content: {', '.join(found_hate_words)}")
             category = "Hate Speech"
         elif found_offensive_words:
-            print(f"Your comment contains the following offensive word(s): {', '.join(found_offensive_words)}")
+            print(f"Found: Offensive content: {', '.join(found_offensive_words)}")
             category = "Offensive"
         else:
-            print("Your comment contains no flagged words.")
+            print("Success: No Hateful or Offensive content.")
             category = "Neither"
 
         # Save the flagged comment to the output CSV file
