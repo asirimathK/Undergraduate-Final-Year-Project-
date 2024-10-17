@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="nkmfcjAIpol0V-zaUdB1">
+    <mxGraphModel dx="1115" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="380" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-3" value="Sri Lankan population" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="70" y="50" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-5" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="120" y="95" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-6" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="205" y="110" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-7" value="Internet users" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-8" value="Social-media users" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="160" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-9" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="145" as="sourcePoint" />
+            <mxPoint x="510" y="95" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-10" value="Facebook" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="65" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-11" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="171" as="sourcePoint" />
+            <mxPoint x="540" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-12" value="Instagram" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-13" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="190" as="sourcePoint" />
+            <mxPoint x="540" y="194" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-14" value="X, Twitter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="180" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-15" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0.714;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="1YJNbQinwFGwATSSG-Xu-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="210" as="sourcePoint" />
+            <mxPoint x="510" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1YJNbQinwFGwATSSG-Xu-16" value="Other" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="235" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
