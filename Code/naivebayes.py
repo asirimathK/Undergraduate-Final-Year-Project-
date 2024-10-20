@@ -1,12 +1,12 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 import os
 
-# Function to train Logistic Regression model
-def train_logistic_regression(X_train, y_train):
+# Function to train the Naive Bayes model
+def train_naive_bayes(X_train, y_train):
     # Fill missing values in the training data with empty strings
     X_train = X_train.fillna('')
 
@@ -16,10 +16,10 @@ def train_logistic_regression(X_train, y_train):
     # Transform the training data
     X_train_tfidf = vectorizer.fit_transform(X_train)
 
-    # Initialize Logistic Regression model
-    model = LogisticRegression(random_state=42, max_iter=1000)
+    # Initialize Multinomial Naive Bayes Classifier
+    model = MultinomialNB()
 
-    # Train the Logistic Regression model
+    # Train the Naive Bayes model
     model.fit(X_train_tfidf, y_train)
 
     return model, vectorizer
@@ -51,8 +51,8 @@ if __name__ == "__main__":
     # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
-    # Train the Logistic Regression model
-    model, vectorizer = train_logistic_regression(X_train, y_train)
+    # Train the Naive Bayes model
+    model, vectorizer = train_naive_bayes(X_train, y_train)
 
     # Evaluate the model on the test data
     evaluate_model(model, vectorizer, X_test, y_test)

@@ -16,8 +16,8 @@ def train_svm(X_train, y_train):
     # Transform the training data into TF-IDF features
     X_train_tfidf = vectorizer.fit_transform(X_train)
 
-    # Initialize Support Vector Classifier
-    model = SVC(kernel='linear', random_state=42)
+    # Initialize Support Vector Classifier with probability=True
+    model = SVC(kernel='linear', random_state=42, probability=True)
 
     # Train the SVM model
     model.fit(X_train_tfidf, y_train)
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     y = data['label']
 
     # Split the dataset into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
     # Train the SVM model
     model, vectorizer = train_svm(X_train, y_train)
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     # Evaluate the model on the test data
     evaluate_model(model, vectorizer, X_test, y_test)
 
-    # Allow user to input a comment and validate it
+    # Allow user to input a comment and validate it with probability
     while True:
         user_comment = input("Enter a comment to validate (or type 'exit' to quit): ")
 
@@ -67,7 +67,14 @@ if __name__ == "__main__":
 
         # Preprocess and validate the user input
         user_comment_tfidf = vectorizer.transform([user_comment])
+
+        # Predict the label and calculate the probabilities
         prediction = model.predict(user_comment_tfidf)
+        probabilities = model.predict_proba(user_comment_tfidf)[0]
+
+        # Display the prediction and probabilities
+        print(f"Probability of non-hate speech: {probabilities[0]:.4f}")
+        print(f"Probability of hate speech: {probabilities[1]:.4f}")
 
         if prediction[0] == 1:  # Assuming '1' means hate speech
             print("This comment is classified as hate speech.")

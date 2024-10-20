@@ -58,3 +58,58 @@ hora upadi kade nsbm wahala danna one
 kalakanni paraya tho marila palayan balla
 wesige putha
 wesi
+huththo
+hodai
+marila palayan
+palayan http yanna
+puka sududa?
+puca sududa?
+ponna patau okkoma
+pinnayo okkoma marala danawa
+marala danawa dananganin ballo okkoma
+NSBM kiyanne hora upadi kadayak
+ravindu pahara balla
+ while True:
+"        user_comment = input(""Enter a comment to validate (or type 'exit' to quit): "")"
+""
+        if user_comment.lower() == 'exit':
+"            print(""Exiting the program."")"
+            break
+""
+        # Preprocess and validate the user input
+        user_comment_tfidf = vectorizer.transform([user_comment])
+""
+        # Predict the label and calculate the probabilities
+        prediction = model.predict(user_comment_tfidf)
+        probabilities = model.predict_proba(user_comment_tfidf)[0]
+""
+        # Display the prediction and probabilities
+"        print(f""Probability of non-hate speech: {probabilities[0]:.4f}"")"
+"        print(f""Probability of hate speech: {probabilities[1]:.4f}"")"
+""
+        if prediction[0] == 1:  # Assuming '1' means hate speech
+"            print(""This comment is classified as hate speech."")"
+            # Save the comment if it is flagged as hate speech
+            df = pd.DataFrame({'statement': [user_comment]})
+"            if os.path.isfile(""hateout.csv""):"
+"                df.to_csv(""hateout.csv"", mode='a', header=False, index=False)"
+            else:
+"                df.to_csv(""hateout.csv"", mode='w', header=True, index=False)"
+"            print(f""Flagged comment saved to hateout.csv"")"
+        else:
+"            print(""This comment is not classified as hate speech."")shafraz horakan karapu salli deepan ballo"
+Ravindu shafraz horakan karapu salli deepan ballo
+kariyo
+hutto
+shafraz horakan karapu salli deepan ballo
+wesige puthala marila yanna one okkoma
+ravindu pinnaya
+kari chamaika
+kalakanni paraya geethmal
+hukanawa punsade
+hukanawa punsade
+shafraz horakan karapu salli deepan ballo
+hukanawa punsade
+hkanawa punsade
+shafraz horakan karapu salli deepan ballo
+hukanawa punsade

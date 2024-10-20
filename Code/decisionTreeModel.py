@@ -51,8 +51,13 @@ def validate_user_input(model, vectorizer, user_input, output_file):
     # Vectorize the user input
     user_input_tfidf = vectorizer.transform([user_input])
 
-    # Predict using the trained model
+    # Predict the label and calculate the probabilities
     prediction = model.predict(user_input_tfidf)
+    probabilities = model.predict_proba(user_input_tfidf)[0]
+
+    # Display the prediction and probabilities
+    print(f"Probability of non-hate speech: {probabilities[0]:.4f}")
+    print(f"Probability of hate speech: {probabilities[1]:.4f}")
 
     # If the prediction is 1 (hate speech), save the comment in the output file
     if prediction == 1:
@@ -108,5 +113,5 @@ if __name__ == "__main__":
                 print("Exiting the program.")
                 break
 
-            # Validate the comment using the trained model
+            # Validate the comment using the trained model and display probabilities
             validate_user_input(model, vectorizer, user_comment, output_file)

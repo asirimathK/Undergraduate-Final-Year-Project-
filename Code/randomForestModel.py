@@ -3,6 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
+import os
 
 # Function to train Random Forest model
 def train_random_forest(X_train, y_train):
@@ -56,7 +57,6 @@ if __name__ == "__main__":
     # Evaluate the model on the test data
     evaluate_model(model, vectorizer, X_test, y_test)
 
-    # Allow user to input a comment and validate it
     while True:
         user_comment = input("Enter a comment to validate (or type 'exit' to quit): ")
 
@@ -66,7 +66,14 @@ if __name__ == "__main__":
 
         # Preprocess and validate the user input
         user_comment_tfidf = vectorizer.transform([user_comment])
+
+        # Predict the label and calculate the probabilities
         prediction = model.predict(user_comment_tfidf)
+        probabilities = model.predict_proba(user_comment_tfidf)[0]
+
+        # Display the prediction and probabilities
+        print(f"Probability of non-hate speech: {probabilities[0]:.4f}")
+        print(f"Probability of hate speech: {probabilities[1]:.4f}")
 
         if prediction[0] == 1:  # Assuming '1' means hate speech
             print("This comment is classified as hate speech.")
