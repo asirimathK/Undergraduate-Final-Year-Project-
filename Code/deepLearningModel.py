@@ -117,8 +117,8 @@ if __name__ == "__main__":
     data['text'] = data['text'].apply(preprocess_text)
 
     # Split data into train, validation, and test sets
-    X_train, X_test, y_train, y_test = train_test_split(data['text'], data['label'], test_size=0.2, random_state=42)
-    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(data['text'], data['label'], test_size=0.5, random_state=42)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.5, random_state=42)
 
     # Initialize tokenizer and fit on training data
     vocab_size = 10000
