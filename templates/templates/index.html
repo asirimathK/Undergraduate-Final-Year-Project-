@@ -3,22 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment Submission</title>
+    <title>Hate Speech Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        input[type=text], textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=submit], input[type=button] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        .alert {
+            padding: 15px;
+            background-color: #f44336;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .success {
+            background-color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-    <h1>Submit Your Comment</h1>
+    <div class="container">
+        <h2>Hate Speech Detection</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alerts">
+                    {% for category, message in messages %}
+                        <div class="alert {{ 'success' if category == 'success' else 'alert' }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
 
-    <form method="POST" action="/submit">
-        <textarea name="comment" rows="4" cols="50" placeholder="Enter your comment"></textarea><br><br>
-        <input type="submit" name="action" value="Submit">
-        <input type="submit" name="action" value="Cancel">
-    </form>
+        <form action="/submit" method="POST">
+            <label for="comment">Enter a Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required></textarea>
 
-    <h2>Submitted Comments</h2>
-    <ul>
-        {% for comment in comments %}
-            <li>{{ comment }}</li>
-        {% endfor %}
-    </ul>
+            <input type="submit" value="Submit">
+            <input type="button" value="Cancel" onclick="window.location.href='/'">
+        </form>
+    </div>
 </body>
 </html>
