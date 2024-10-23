@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hate Speech Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Hate Speech Detection System</h2>
+        <form action="/submit" method="POST">
+            <fieldset>
+                <label for="comment">Enter your comment:</label>
+                <textarea id="comment" name="comment" rows="3" required></textarea>
+            </fieldset>
+            <button type="submit" class="button">Submit</button>
+            <button type="reset" class="button button-outline">Cancel</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

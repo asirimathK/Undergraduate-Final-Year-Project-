@@ -4,28 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hate Speech Detection</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        // Function to handle AJAX submission
+        function submitComment(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            const comment = document.getElementById("comment").value;
+
+            // Send the comment to the server using AJAX
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ comment: comment }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'blocked') {
+                    // Display the popup if the comment is hate speech
+                    alert("Comment is blocked because it contains hate speech.");
+                } else {
+                    // Add the comment to the list of comments if it’s not hate speech
+                    const commentSection = document.getElementById("comment-section");
+                    const newComment = document.createElement("p");
+                    newComment.textContent = comment;
+                    commentSection.appendChild(newComment);
+                }
+
+                // Clear the input field
+                document.getElementById("comment").value = '';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h2>Hate Speech Detection System</h2>
-        <form action="/submit" method="POST">
-            <fieldset>
-                <label for="comment">Enter your comment:</label>
-                <textarea id="comment" name="comment" rows="3" required></textarea>
-            </fieldset>
-            <button type="submit" class="button">Submit</button>
-            <button type="reset" class="button button-outline">Cancel</button>
-        </form>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-    </div>
+
+    <h1>Demo Interface - Hate Speech Detection System</h1>
+
+    <div id="iframe-container">
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%2F%3Ffbid%3D3720631968173168%26set%3Da.1388411674728554&show_text=true&width=500" width="1000" height="550 style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+    <!-- Comment form -->
+
+    <form id="comment-form" onsubmit="submitComment(event)">
+
+        <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Enter your comment"></textarea><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+
+
+    <!-- Section to display comments -->
+    <h2>Comments</h2>
+    <div id="comment-section"></div>
+
 </body>
 </html>

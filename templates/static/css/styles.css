@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+
+}
+
+textarea {
+    width: 64.5%;
+
+}
+
+button {
+    margin-top: 10px;
+}
+
+#comment-section {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+#comment-section p {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+h1 {
+    text-align: center;
+}
+#comment-form {
+    position: relative;
+    left: 273px
+;
+
+}
+#iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

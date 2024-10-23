@@ -30,10 +30,10 @@ model = RandomForestClassifier(random_state=42)
 model.fit(X_train_tfidf, y_train)
 
 # Save the trained model and the vectorizer as .pkl files
-with open("random_forest_model.pkl", "wb") as model_file:
+with open("models/random_forest_model.pkl", "wb") as model_file:
     pickle.dump(model, model_file)
 
-with open("tfidf_vectorizer.pkl", "wb") as vectorizer_file:
+with open("models/tfidf_vectorizer.pkl", "wb") as vectorizer_file:
     pickle.dump(vectorizer, vectorizer_file)
 
 print("Model and vectorizer have been saved successfully.")
