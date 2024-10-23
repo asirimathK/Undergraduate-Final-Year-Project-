@@ -1,69 +1,49 @@
-import os
-import pandas as pd
-from flask import Flask, render_template, request, redirect, url_for, flash
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report
+import pickle
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'
 
+# Initialize the model and vectorizer as global variables
+model = None
+vectorizer = None
 
-# Train the Naive Bayes model
-def train_naive_bayes():
-    data = pd.read_csv("fypDS.csv")
-    X = data['text']
-    y = data['label']
+# Load the trained Random Forest model and fitted TfidfVectorizer
+def load_model():
+    global model, vectorizer
+    try:
+        model = pickle.load(open("random_forest_model.pkl", "rb"))
+        vectorizer = pickle.load(open("tfidf_vectorizer.pkl", "rb"))
+        print("Model and vectorizer loaded successfully.")
+    except Exception as e:
+        print(f"Error loading model or vectorizer: {e}")
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
-
-    # Vectorization and training
-    vectorizer = TfidfVectorizer()
-    X_train_tfidf = vectorizer.fit_transform(X_train)
-
-    model = MultinomialNB()
-    model.fit(X_train_tfidf, y_train)
-
-    return model, vectorizer
-
-
-# Load and train the model
-model, vectorizer = train_naive_bayes()
-
-
-# Home page route
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
-
-# Handle form submission
 @app.route('/submit', methods=['POST'])
-def submit():
-    if request.method == 'POST':
-        user_comment = request.form['comment']
+def submit_comment():
+    # Ensure model and vectorizer are loaded
+    if model is None or vectorizer is None:
+        load_model()
 
-        if not user_comment:
-            flash('Please enter a comment!', 'error')
-            return redirect(url_for('index'))
+    user_comment = request.form['comment']
 
-        # Preprocess and validate the user input
-        user_comment_tfidf = vectorizer.transform([user_comment])
-        prediction = model.predict(user_comment_tfidf)
-        probabilities = model.predict_proba(user_comment_tfidf)[0]
+    # Preprocess and validate the user input
+    user_comment_tfidf = vectorizer.transform([user_comment])
 
-        if prediction[0] == 1:  # Assuming '1' means hate speech
-            flash(f"Warning: This comment is classified as hate speech.", 'danger')
-        else:
-            # Save the non-hate speech comment
-            with open('non_hate_speech.txt', 'a') as f:
-                f.write(user_comment + '\n')
-            flash(f"Success: This comment is not classified as hate speech.", 'success')
+    # Predict the label and calculate the probabilities
+    prediction = model.predict(user_comment_tfidf)
+    probabilities = model.predict_proba(user_comment_tfidf)[0]
 
-    return redirect(url_for('index'))
+    if prediction[0] == 1:  # Assuming '1' means hate speech
+        message = "This comment is classified as hate speech."
+    else:
+        message = "This comment is not classified as hate speech."
 
+    return render_template('result.html', message=message)
 
-# Run the app
 if __name__ == "__main__":
+    # Load model and vectorizer on app start
+    load_model()
     app.run(debug=True)

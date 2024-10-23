@@ -1,0 +1,262 @@
+statement
+hakuna matata. and im ravindu amazed with the dilshan performance of the asirimath team and really happy to annoce my gratitude!
+asirimath
+bihara
+thota hena gahanawa asirimath
+asirimath
+hutto
+mage nama loku harsha
+mage
+mama asai bath kanna
+marila palayan wesi
+hutto
+mama asai bath kanna
+hena gahanna one kalakanninta
+wetta pasi
+baduwa
+hutto
+hutto mata badagini
+mama asai bath kanna
+mama hoda lamayek
+asirimath
+pako
+kalakanni ubala okkoma
+hutto
+mama hoda lamayek
+mama hoda lamayek
+mama bath kawa
+ballek yako tho
+hodai
+http
+whokanno
+hutto
+asma na hutto mewata
+nsbm nam jara huttak
+nsbm jara huttak
+whkanawa 
+kariyo
+hutto
+mata kanna deepan yako
+me rata kapu kalakanniyo
+wesige puthala
+me rata kapu kalakanni wesige puthala okkotama hena gahanna one
+me rata kapu eka thamai ravindu pinnaya
+huththo
+ravindu huththo uba mariyan
+ravindu uba marila palayan
+NSBM kiyanne hora guhawak
+NSBM kiyanne hoda campus ekak
+lasssanai
+hoda lamayek oya
+mama
+lassanai
+lassnai photo eka
+oya harima hoda kenek
+huththo
+nsbm kiyanne hora guhawak
+hora upadi kade nsbm wahala danna one
+kalakanni paraya tho marila palayan balla
+wesige putha
+wesi
+huththo
+hodai
+marila palayan
+palayan http yanna
+puka sududa?
+puca sududa?
+ponna patau okkoma
+pinnayo okkoma marala danawa
+marala danawa dananganin ballo okkoma
+NSBM kiyanne hora upadi kadayak
+ravindu pahara balla
+ while True:
+"        user_comment = input(""Enter a comment to validate (or type 'exit' to quit): "")"
+""
+        if user_comment.lower() == 'exit':
+"            print(""Exiting the program."")"
+            break
+""
+        # Preprocess and validate the user input
+        user_comment_tfidf = vectorizer.transform([user_comment])
+""
+        # Predict the label and calculate the probabilities
+        prediction = model.predict(user_comment_tfidf)
+        probabilities = model.predict_proba(user_comment_tfidf)[0]
+""
+        # Display the prediction and probabilities
+"        print(f""Probability of non-hate speech: {probabilities[0]:.4f}"")"
+"        print(f""Probability of hate speech: {probabilities[1]:.4f}"")"
+""
+        if prediction[0] == 1:  # Assuming '1' means hate speech
+"            print(""This comment is classified as hate speech."")"
+            # Save the comment if it is flagged as hate speech
+            df = pd.DataFrame({'statement': [user_comment]})
+"            if os.path.isfile(""hateout.csv""):"
+"                df.to_csv(""hateout.csv"", mode='a', header=False, index=False)"
+            else:
+"                df.to_csv(""hateout.csv"", mode='w', header=True, index=False)"
+"            print(f""Flagged comment saved to hateout.csv"")"
+        else:
+"            print(""This comment is not classified as hate speech."")shafraz horakan karapu salli deepan ballo"
+Ravindu shafraz horakan karapu salli deepan ballo
+kariyo
+hutto
+shafraz horakan karapu salli deepan ballo
+wesige puthala marila yanna one okkoma
+ravindu pinnaya
+kari chamaika
+kalakanni paraya geethmal
+hukanawa punsade
+hukanawa punsade
+shafraz horakan karapu salli deepan ballo
+hukanawa punsade
+hkanawa punsade
+shafraz horakan karapu salli deepan ballo
+hukanawa punsade
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+ha ha. mona http kenekda me?
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+me kalakanni thamai rata winasa kare. marila palayan okkoma
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+oba thuma thamai me rata balaporoththu una wenasa. oba thuma matha thamai hamoma wishwasaya thibbe. malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+tahukanna wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+me kalakanni thamai rata winasa kare. marila palayan okkoma
+godak hoda gayanayak. oyata idiriyatama yanna sub pathanawa mama. 
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+oba thuma thamai me rata balaporoththu una wenasa. oba thuma matha thamai hamoma wishwasaya thibbe. malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+kumanthrana karayo aye deshitha deshapalanaya genna hadanne api ahuweyi owata. hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+tahukanna wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+Oba thuma thamai me rata balaporoththu una wenasa. Oba thuma matha thamai hamoma wishwasaya thibbe. Malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+ha ha. mona http kenekda me?
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+Harima lassanai. Budu saranai oyata.
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+godak hoda gayanayak. Oyata idiriyatama yanna sub pathanawa mama. 
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+Oba thuma thamai me rata balaporoththu una wenasa. Oba thuma matha thamai hamoma wishwasaya thibbe. Malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+Harima lassanai. Budu saranai oyata.
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+godak hoda gayanayak. Oyata idiriyatama yanna sub pathanawa mama. 
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+Oba thuma thamai me rata balaporoththu una wenasa. Oba thuma matha thamai hamoma wishwasaya thibbe. Malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+Jayawewa theruwansaranai
+pukatat hina yanawa anee mage puket namal pipila
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Harima lassanai. Budu saranai oyata.
+me kalakanni thamai rata winasa kare. Marila palayan okkoma
+godak hoda gayanayak. Oyata idiriyatama yanna sub pathanawa mama. 
+ha ha. mona http kenekda me?
+marila yanna one jeewitha thamai me thamath jeewath wenne.
+whukana samajayak oi meka.
+whukana samajayak oi meka.
+Oba thuma thamai me rata balaporoththu una wenasa. Oba thuma matha thamai hamoma wishwasaya thibbe. Malimawata jaya!
+ pamko biththare size eke madine kekara gapu tharamata?? Nodakin danwath paurashaya thiyagena vihuluwak novi paduwe idapan humthoo
+anna ehema thithata wad karoth nam katawath pissu kelinnawath boruwen minissu rawattannawath bari wei
+Kumanthrana karayo Aye deshitha deshapalanaya genna hadanne Api ahuweyi owata. Hiruyi deranayi allagena supiri gemak gahanna hadanne neda
+Meyageth try akata parliment rin ganna paw rajapakshage passa hodapu dilith aparade salli nasthi karanawa
+pukatat hina yanawa anee mage puket namal pipila
+Tahukanna Wesige putha thawath puka denawa paraka nam hambenna epa ammapa hapala kanawa
+Lassana sindhu tikak gaga inne nethuwa puke amarauwata illang kagattha moda moosalaya

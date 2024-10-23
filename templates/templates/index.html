@@ -4,58 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hate Speech Detection</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-        .container {
-            width: 400px;
-            margin: 0 auto;
-        }
-        input[type=text], textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-        input[type=submit], input[type=button] {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            cursor: pointer;
-        }
-        .alert {
-            padding: 15px;
-            background-color: #f44336;
-            color: white;
-            margin-bottom: 20px;
-        }
-        .success {
-            background-color: #4CAF50;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 </head>
 <body>
     <div class="container">
-        <h2>Hate Speech Detection</h2>
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        <h2>Hate Speech Detection System</h2>
+        <form action="/submit" method="POST">
+            <fieldset>
+                <label for="comment">Enter your comment:</label>
+                <textarea id="comment" name="comment" rows="3" required></textarea>
+            </fieldset>
+            <button type="submit" class="button">Submit</button>
+            <button type="reset" class="button button-outline">Cancel</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
             {% if messages %}
-                <div class="alerts">
-                    {% for category, message in messages %}
-                        <div class="alert {{ 'success' if category == 'success' else 'alert' }}">{{ message }}</div>
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
                     {% endfor %}
-                </div>
+                </ul>
             {% endif %}
         {% endwith %}
-
-        <form action="/submit" method="POST">
-            <label for="comment">Enter a Comment:</label>
-            <textarea id="comment" name="comment" rows="4" required></textarea>
-
-            <input type="submit" value="Submit">
-            <input type="button" value="Cancel" onclick="window.location.href='/'">
-        </form>
     </div>
 </body>
 </html>
